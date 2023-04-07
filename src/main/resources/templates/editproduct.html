@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+	<title>ProductList</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="container">
+    	<h1> Edit wine</h1>
+		<form th:object="${products}" th:action="@{../save}" action="#" method="post">
+			<input type="hidden" id="id" th:field="*{id}" />
+		  	<label for="name">Name</label>
+			<input type="text" id="name" th:field="*{name}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="type">Type</label>
+			<input type="text" id="type" th:field="*{type}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="country">Country</label>
+			<input type="text" id="country" th:field="*{country}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="productionYear">Year</label>
+			<input type="text" id="productionYear" th:field="*{productionYear}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="manlist">Manufacturer</label>
+			 <select id="manlist" th:field="*{manufacturer}" class="form-control">
+       			<option th:each="manufacturer: ${manufacturers}" th:value="${manufacturer.manufacturerid}" th:text="${manufacturer.name}"></option>
+    		</select>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" class="btn btn-success" value="Save"></input>
+		  	
+		</form>
+	</div>
+</body>
+</html>

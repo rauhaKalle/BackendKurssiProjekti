@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>ManufacturerList</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />	
+</head>
+<body>
+	<div class="container">
+    	<h1>Manufacturer List</h1>
+    	<table class="table table-striped">
+    		<tr>
+		    	<th>Manufacturer</th>
+			</tr>
+    		<tr th:each = "manufacturer : ${manufacturers}">
+    			<td th:text="${manufacturer.name}"></td>
+    		</tr>
+    	</table>
+    	<a href="/addmanufacturer">Add a manufacturer</a>
+    	-
+    	<a href="/productlist">Back to Products</a>
+    </div>
+</body>
+</html>
