@@ -33,11 +33,12 @@ public class WinesupplystoreApplication {
 		return (args) -> {
 
 			log.info("Save manufacturers");
-			mrepository.save(new Manufacturer("Rukka"));
-			mrepository.save(new Manufacturer("Pomppa"));
+			mrepository.save(new Manufacturer("Michlits Werner"));
+			mrepository.save(new Manufacturer("Martin Obenaus"));
 
 			log.info("save products");
-			prepository.save(new Product("Garzone", "Red", "Country", 2021, mrepository.findByName("Pomppa").get(0)));
+			prepository.save(new Product("Meinklang Pet Nat", "Rose", "Itävalta", 2021, mrepository.findByName("Michlits Werner").get(0)));
+			prepository.save(new Product("Martin Obenaus MO Weiss", "White", "Itävalta", 2020, mrepository.findByName("Martin Obenaus").get(0)));
 			
 			log.info("create users");
 			AppUser user1 = new AppUser("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");

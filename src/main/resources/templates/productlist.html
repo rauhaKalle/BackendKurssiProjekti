@@ -35,8 +35,7 @@
 					<td th:text="${product.getCountry()}"></td>
 					<td th:text="${product.getProductionYear()}"></td>
 					<td th:text="${product.manufacturer.getName()}"></td>
-					<td><a th:href="@{/deleteproduct/{id}(id=${product.id})}"
-						class="btn btn-danger">Delete</a></td>
+					<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/deleteproduct/{id}(id=${product.id})}" class="btn btn-xs btn-danger">Delete</a></td>
 					<td><a th:href="@{/edit/{id}(id=${product.id})}">Edit</a></td>
 				</tr>
 					
